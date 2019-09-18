@@ -1,0 +1,87 @@
+
+<div class="container top" >
+  <div class="row">
+  <div class="col-sm-12 col-xs-12 col-md-12">
+      <div class="card card1">
+          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div class="card-body">
+            
+                <form name="form" (ngSubmit)="f.form.valid && onSubmitCustomer()" #f="ngForm" novalidate>
+                    <h1>Second type form validation</h1>
+                  <div class="form-group">
+                  <label for="country"><b>Country</b></label>
+                  <select class="form-control" placeholder="Select country" name="country" [(ngModel)]="model.country" #country="ngModel" [ngClass]="{ 'is-invalid': f.submitted && country.invalid }" required autofocus>
+                    <option class="form-control" *ngFor="let country of countries" [value]="country.id"> {{country.name}}</option>
+                  </select>
+                 </div>
+                  <div *ngIf="f.submitted && country.invalid" class="invalid-text">
+                    <div class="validation" *ngIf="country.errors.required">Country is required</div>
+                  </div>
+              
+              
+                  <div class="form-group">
+                      <label for="subject"><b>Subject</b></label>
+                      <select class="form-control" placeholder="Select subject" name="subject" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required>
+                        <option class="form-control" *ngFor="let subject of countries" [value]="subject.id"> {{subject.name}}</option>
+                      </select>
+                     </div>
+                      <div *ngIf="f.submitted && subject.invalid" class="invalid-text">
+                        <div class="validation" *ngIf="subject.errors.required">subject is required</div>
+                      </div>
+              
+                  <div class="form-group">
+                      <label for="add Question"><b>Question Add</b></label>
+                    <textarea class="form-control" name="question" rows="10" cols="30" placeholder="Enter Question"  [(ngModel)]="model.question" #question="ngModel" [ngClass]="{ 'is-invalid': f.submitted && question.invalid }" required> </textarea>            
+                    <!-- <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required> -->
+                  <div *ngIf="f.submitted && question.invalid" class="invalid-text">
+                    <div class="validation" *ngIf="question.errors.required">Question add is required</div>
+                  </div>
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="option1"><b>Option 1</b></label>
+                      <input type="text" class="form-control" name="option1" [(ngModel)]="model.option1" #option1="ngModel" [ngClass]="{ 'is-invalid': f.submitted && option1.invalid }" required>
+                    <div *ngIf="f.submitted && option1.invalid" class="invalid-text">
+                      <div class="validation" *ngIf="option1.errors.required">option 1 is required</div>
+                    </div>
+                    </div>
+              
+                    <div class="form-group">
+                        <label for="option2"><b>Option 2</b></label>
+                        <input type="text" class="form-control" name="option2" [(ngModel)]="model.option2" #option2="ngModel" [ngClass]="{ 'is-invalid': f.submitted && option2.invalid }" required>
+                      <div *ngIf="f.submitted && option2.invalid" class="invalid-text">
+                        <div class="validation" *ngIf="option2.errors.required">option 2 is required</div>
+                      </div>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="option3"><b>Option 3</b></label>
+                          <input type="text" class="form-control" name="option3" [(ngModel)]="model.option3" #option3="ngModel" [ngClass]="{ 'is-invalid': f.submitted && option3.invalid }" required>
+                        <div *ngIf="f.submitted && option3.invalid" class="invalid-text">
+                          <div class="validation" *ngIf="option3.errors.required">option 3 is required</div>
+                        </div>
+                        </div>
+              
+                        <div class="form-group">
+                            <label for="option4"><b>Option 4</b></label>
+                            <input type="text" class="form-control" name="option4" [(ngModel)]="model.option4" #option4="ngModel" [ngClass]="{ 'is-invalid': f.submitted && option4.invalid }" required>
+                          <div *ngIf="f.submitted && option4.invalid" class="invalid-text">
+                            <div class="validation" *ngIf="option4.errors.required">option 4 is required</div>
+                          </div>
+                          </div>
+              
+                          <div class="form-group">
+                              <label for="correct"><b>Correct Answer</b></label>
+                              <input type="text" class="form-control"  name="correct" [(ngModel)]="model.correct" #correct="ngModel" [ngClass]="{ 'is-invalid': f.submitted && correct.invalid }" required>
+                            <div *ngIf="f.submitted && correct.invalid" class="invalid-text">
+                              <div class="validation" *ngIf="correct.errors.required">Correct answer is required</div>
+                            </div>
+                            </div>
+                  <button type="submit" class="btn btn-success">Add Data</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
